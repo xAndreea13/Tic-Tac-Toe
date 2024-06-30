@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+void print_board(char matrix[3][3]);
+int check_board(char matrix[3][3], int line, int column);
+
 int main()
 {
     char matrix[3][3];
