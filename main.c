@@ -16,6 +16,8 @@ int main()
 
     int empty_space = 9;  //the matrix is completly empty
     int winner = 0;       //there's no winner
+    int line = -1;
+    int column = -1;
 
     while(1)
     {
@@ -24,8 +26,56 @@ int main()
             printf("GAME OVER - No winner!");
             break;
         }
+        
+        //player 1
+        do{
+            printf("Player 1 : ");
+            scanf("%d %d", &line, &column);
 
-        //TO DO
+            if( (line < 0 || line > 2 ) || (column < 0 || column > 2))
+            {
+                printf("Error - incorrect position of element! Try again!\n");
+            }
+            else
+            {   
+                matrix[line][column] = 'X';
+                break;
+            }
+
+        }while(1);
+        
+        //print the board on the board
+
+        if(check_board(matrix, line, column))
+        {
+            printf("\nGAME OVER!    -    The winner is: Player 1");
+            break;
+        }
+
+        //player 2
+        do{
+            printf("Player 2 : ");
+            scanf("%d %d", &line, &column);
+
+            if( (line < 0 || line > 2 ) || (column < 0 || column > 2))
+            {
+                printf("Error - incorrect position of element! Try again!\n");
+            }
+            else
+            {   
+                matrix[line][column] = '0';
+                break;
+            }
+
+        }while(1);
+        
+        //print the board on the board
+
+        if(check_board(matrix, line, column))
+        {
+            printf("\nGAME OVER!    -    The winner is: Player 2");
+            break;
+        }
     }
 
 
