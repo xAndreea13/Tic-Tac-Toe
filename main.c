@@ -40,9 +40,16 @@ int main()
             }
             else
             {   
-                matrix[line][column] = 'X';
-                empty_space--;
-                break;
+                if(matrix[line][column] != ' ')
+                {
+                    printf("Error - position already occupied! Try again!\n");
+                }
+                else
+                {
+                    matrix[line][column] = 'X';
+                    empty_space--;
+                    break;
+                }
             }
 
         }while(1);
@@ -73,9 +80,17 @@ int main()
             }
             else
             {   
-                matrix[line][column] = '0';
-                empty_space--;
-                break;
+                if(matrix[line][column] != ' ')
+                {
+                    printf("Error - position already occupied! Try again!\n");
+                }
+                else
+                {
+                    matrix[line][column] = '0';
+                    empty_space--;
+                    break;
+                }
+                
             }
 
         }while(1);
