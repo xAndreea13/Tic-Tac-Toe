@@ -15,19 +15,18 @@ int main()
     //player2 is 0
 
     int empty_space = 9;  //the matrix is completly empty
-    int winner = 0;       //there's no winner
     int line = -1;
     int column = -1;
 
     while(1)
     {
-        if(empty_space == 0 && winner == 0)
+        //player 1
+        if(empty_space == 0)
         {
             printf("GAME OVER - No winner!");
             break;
         }
         
-        //player 1
         do{
             printf("Player 1 : ");
             scanf("%d %d", &line, &column);
@@ -39,6 +38,7 @@ int main()
             else
             {   
                 matrix[line][column] = 'X';
+                empty_space--;
                 break;
             }
 
@@ -53,6 +53,13 @@ int main()
         }
 
         //player 2
+
+        if(empty_space == 0)
+        {
+            printf("GAME OVER - No winner!");
+            break;
+        }
+
         do{
             printf("Player 2 : ");
             scanf("%d %d", &line, &column);
@@ -64,6 +71,7 @@ int main()
             else
             {   
                 matrix[line][column] = '0';
+                empty_space--;
                 break;
             }
 
