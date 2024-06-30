@@ -3,7 +3,7 @@
 int main()
 {
     char matrix[3][3];
-    char init_val = '/';
+    char init_val = ' ';
 
     for(int i = 0; i < 3; i++)
         for(int j = 0; j < 3; j++)
@@ -44,7 +44,7 @@ int main()
 
         }while(1);
         
-        //print the board on the board
+        print_board(matrix);
 
         if(check_board(matrix, line, column))
         {
@@ -69,7 +69,7 @@ int main()
 
         }while(1);
         
-        //print the board on the board
+        print_board(matrix);
 
         if(check_board(matrix, line, column))
         {
@@ -78,15 +78,6 @@ int main()
         }
     }
 
-
-    for(int i = 0; i < 3; i++)
-    {
-        for(int j = 0; j < 3; j++)
-        {
-            printf("%c ", matrix[i][j]);
-        }
-        printf("\n");
-    }
 }
 
 int check_board(char matrix[3][3], int line, int column)
@@ -177,4 +168,13 @@ int check_board(char matrix[3][3], int line, int column)
     }
 
     return 0;
+}
+
+void print_board(char matrix[3][3])
+{
+    printf(" %c | %c | %c \n", matrix[0][0], matrix[0][1], matrix[0][2]);
+    printf("---+---+---\n");
+    printf(" %c | %c | %c \n", matrix[1][0], matrix[1][1], matrix[1][2]);
+    printf("---+---+---\n");
+    printf(" %c | %c | %c \n", matrix[2][0], matrix[2][1], matrix[2][2]);
 }
